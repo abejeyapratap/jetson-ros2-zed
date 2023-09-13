@@ -1,0 +1,10 @@
+### create symlinks to Lidar/Serial USB devices; Note: doesn't get passed to Docker in privileged mode
+#KERNEL=="ttyUSB*", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", MODE:="0777", SYMLINK+="myserial"
+#KERNEL=="ttyUSB*", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE:="0777", SYMLINK+="rplidar"
+
+### create hardlinks to Yahboom's Lidar/Serial USB devices
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", ACTION=="add", RUN+="/root/bin/udev-usb-tweak.sh myserial"
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", ACTION=="remove", RUN+="/bin/rm -f /dev/myserial"
+
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ACTION=="add", RUN+="/root/bin/udev-usb-tweak.sh rplidar"
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ACTION=="remove", RUN+="/bin/rm -f /dev/rplidar"
