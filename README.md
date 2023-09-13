@@ -23,3 +23,12 @@ This repository documents my experiments integrating a Zed 2 AI Stereo camera, R
 3. Verify Zed 2 connectivity using `ll /dev/video*`
 4. Run Docker container in privileged mode using `run_docker.sh` (pulls the latest working docker image)
 
+### Examples
+`scripts/` contains examples written in ROS2 Python for object detection using Zed + YOLO
+
+### Full setup
+Please see TODO.md for how these images were created
+
+### Docker Image Repos:
+- Images for [ZED, ROS2, and YOLO](https://hub.docker.com/repository/docker/abejeyapratap/zed_foxy_focal/general)
+- Images with support for [Yahboom packages](https://hub.docker.com/repository/docker/abejeyapratap/zed_foxy_yahboom/general)
