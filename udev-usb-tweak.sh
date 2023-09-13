@@ -1,5 +1,7 @@
 #!/bin/bash
-# Source: https://hackaday.io/page/13294-solved-docker-udev-usb-naming
+### Source: https://hackaday.io/page/13294-solved-docker-udev-usb-naming
+### udev rules to map Yahboom's Lidar/Serial USB ports to hard-link names
+### IMPT: MUST be placed in /root/bin of host
 
 p=""
 if [ "$1" == "myserial" ]
