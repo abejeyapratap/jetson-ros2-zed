@@ -3,17 +3,18 @@
 This repository documents my experiments integrating a Zed 2 AI Stereo camera, ROS2 Foxy, and YOLOv5 object detection with a Rosmaster R2 rover that has a Jetson NX and 4ROS Lidar.
 
 ## System Requirements
-### Hardware:
-- Yahboom Rosmaster R2
+#### Hardware:
+- [Yahboom Rosmaster R2](http://www.yahboom.net/study/ROSMASTER-R2)
 - Nvidia Jetson Xavier NX
-- Stereolabs Zed 2 camera
+- [Stereolabs Zed 2 camera](https://www.stereolabs.com/zed-2/)
 
-### Software:
+#### Software:
 - Ubuntu 20.04 (L4T 35.3.1)
 - Cuda 11.4
 - Docker
 
 ## System Compatibility & Usage
+*Note: For graphical visualizations/GUI support and remote desktop, please setup NoMachine on the Jetson NX and your PC*
 1. Verify system compatibility (later versions may work too but not tested):
    1. `cat /etc/nv_tegra_release`
    2. `nvcc --version`
@@ -23,12 +24,18 @@ This repository documents my experiments integrating a Zed 2 AI Stereo camera, R
 3. Verify Zed 2 connectivity using `ll /dev/video*`
 4. Run Docker container in privileged mode using `run_docker.sh` (pulls the latest working docker image)
 
-### Examples
+(TODO: Add example screenshots/videos)
+(TODO: Add full setup doc)
+
+## Examples
 `scripts/` contains examples written in ROS2 Python for object detection using Zed + YOLO
 
-### Full setup
+## Full setup
 Please see TODO.md for how these images were created
 
-### Docker Image Repos:
+## Docker Image Repos:
 - Images for [ZED, ROS2, and YOLO](https://hub.docker.com/repository/docker/abejeyapratap/zed_foxy_focal/general)
 - Images with support for [Yahboom packages](https://hub.docker.com/repository/docker/abejeyapratap/zed_foxy_yahboom/general)
+
+### Previous Attempts
+I initially attempted this integration process on the Jetson Nano. However, after several rounds of trial-and-error and troubleshooting, we realized the Nano cannot work with Zed and ROS2 due to L4T version limitation (max L4T is 32.7)
