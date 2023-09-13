@@ -31,7 +31,7 @@ This repository documents my experiments integrating a Zed 2 AI Stereo camera, R
 `scripts/` contains examples written in ROS2 Python for object detection using Zed + YOLO
 
 ## Full setup
-Please see TODO.md for how these images were created
+Please see `docs` for how these images were created
 
 ## Docker Image Repos:
 - Images for [ZED, ROS2, and YOLO](https://hub.docker.com/repository/docker/abejeyapratap/zed_foxy_focal/general)
